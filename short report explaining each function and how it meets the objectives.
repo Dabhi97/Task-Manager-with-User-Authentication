@@ -1,0 +1,131 @@
+Task Manager with User Authentication
+
+Objective 1: User Authentication
+The system allows users to register and log in securely. This is achieved through the following functions:
+register():
+Purpose: Allows new users to register by entering a username and password.
+
+How it works:
+Prompts the user for a username and password.
+Checks if the username is unique by verifying it against the users.json file.
+Hashes the password using SHA-256 for security.
+Stores the username and hashed password in users.json.
+
+Meets Objective: Ensures secure user registration and stores credentials persistently.
+
+login():
+
+Purpose: Authenticates users by validating their username and password.
+
+How it works:
+
+Prompts the user for their username and password.
+
+Hashes the entered password and compares it with the stored hash in users.json.
+
+Grants access to the task manager if the credentials match.
+
+Meets Objective: Provides secure login functionality and ensures only authenticated users can access their tasks.
+
+
+Objective 2: Task Management
+The system allows users to manage their tasks, including adding, viewing, marking as completed, and deleting tasks. This is achieved through the following functions:
+
+add_task(username):
+
+Purpose: Allows users to add a new task.
+
+How it works:
+
+Prompts the user for a task description.
+
+Assigns a unique task ID and sets the status to "Pending".
+
+Stores the task in tasks.json under the user's username.
+
+Meets Objective: Enables users to create and store tasks persistently.
+
+view_tasks(username):
+
+Purpose: Displays all tasks for the logged-in user.
+
+How it works:
+
+Retrieves tasks from tasks.json for the logged-in user.
+
+Displays the task ID, description, and status (Pending/Completed).
+
+Meets Objective: Allows users to view their tasks in a structured format.
+
+mark_task_completed(username):
+
+Purpose: Allows users to mark a task as completed.
+
+How it works:
+
+Prompts the user for the task ID.
+
+Updates the task status to "Completed" in tasks.json.
+
+Meets Objective: Provides functionality to update task status.
+
+delete_task(username):
+
+Purpose: Allows users to delete a task.
+
+
+
+How it works:
+
+Prompts the user for the task ID.
+
+Removes the task from tasks.json for the logged-in user.
+
+Meets Objective: Enables users to delete tasks they no longer need.
+
+Objective 3: File Handling
+The system uses file handling to store user credentials and tasks persistently.
+
+users.json:
+
+Stores usernames and hashed passwords.
+
+Ensures user data is saved even after the program ends.
+
+tasks.json:
+
+Stores tasks for each user, including task ID, description, and status.
+
+Ensures tasks are saved and can be retrieved later.
+
+Objective 4: Interactive Menu
+The system provides an interactive menu-driven interface for users to manage tasks.
+
+task_manager_menu(username):
+
+Purpose: Displays a menu for task management options.
+
+How it works:
+
+Provides options to add, view, mark as completed, delete tasks, or logout.
+
+Calls the corresponding functions based on user input.
+
+Meets Objective: Offers a user-friendly interface for task management.
+
+main():
+
+Purpose: Acts as the entry point for the program.
+
+How it works:
+
+Displays options for registration, login, or exit.
+
+Calls the appropriate functions based on user input.
+
+Meets Objective: Provides a seamless user experience.
+
+
+
+
+
